@@ -38,36 +38,5 @@ ActiveRecord::Schema.define(version: 20160705110713) do
     t.index ["books_id"], name: "index_reviews_on_books_id", using: :btree
     t.index ["users_id"], name: "index_reviews_on_users_id", using: :btree
   end
-  create_table "book_authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "authors_id"
-    t.integer  "books_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["authors_id"], name: "index_book_authors_on_authors_id", using: :btree
-    t.index ["books_id"], name: "index_book_authors_on_books_id", using: :btree
-  end
-
-  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
-    t.integer  "publishers_id"
-    t.string   "isbn"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["publishers_id"], name: "index_books_on_publishers_id", using: :btree
-  end
-
-  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "auth_id"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "genre_id"
-    t.string   "genre_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end

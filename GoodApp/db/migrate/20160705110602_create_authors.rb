@@ -3,7 +3,6 @@ class CreateAuthors < ActiveRecord::Migration[5.0]
     create_table :authors do |t|
       t.integer :auth_id
       t.string :name
-
       t.timestamps
     end
   end

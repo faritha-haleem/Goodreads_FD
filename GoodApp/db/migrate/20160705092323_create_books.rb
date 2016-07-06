@@ -4,7 +4,6 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.string :title
       t.belongs_to :publishers, index:true
       t.string :isbn
-
       t.timestamps
     end
   end

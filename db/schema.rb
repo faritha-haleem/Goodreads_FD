@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705110713) do
+ActiveRecord::Schema.define(version: 20160706055114) do
+
+  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "auth_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "book_authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "authors_id"
+    t.integer  "books_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["authors_id"], name: "index_book_authors_on_authors_id", using: :btree
+    t.index ["books_id"], name: "index_book_authors_on_books_id", using: :btree
+  end
 
   create_table "book_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "books_id"
@@ -19,6 +35,22 @@ ActiveRecord::Schema.define(version: 20160705110713) do
     t.datetime "updated_at", null: false
     t.index ["books_id"], name: "index_book_genres_on_books_id", using: :btree
     t.index ["genres_id"], name: "index_book_genres_on_genres_id", using: :btree
+  end
+
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.integer  "publishers_id"
+    t.string   "isbn"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["publishers_id"], name: "index_books_on_publishers_id", using: :btree
+  end
+
+  create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "genre_id"
+    t.string   "genre_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "publishers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -37,6 +69,18 @@ ActiveRecord::Schema.define(version: 20160705110713) do
     t.datetime "updated_at",               null: false
     t.index ["books_id"], name: "index_reviews_on_books_id", using: :btree
     t.index ["users_id"], name: "index_reviews_on_users_id", using: :btree
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "FirstName"
+    t.string   "LastName"
+    t.string   "Username"
+    t.string   "Email"
+    t.string   "Token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Email"], name: "index_users_on_Email", unique: true, using: :btree
+    t.index ["Username"], name: "index_users_on_Username", unique: true, using: :btree
   end
 
 end

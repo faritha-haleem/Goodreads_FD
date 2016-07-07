@@ -39,3 +39,23 @@ namespace :import do
     puts "Seeding publishers is done"
   end
 end
+namespace :import do
+  desc "Importing book_authors CSV file into our database using rails"
+  task :book_authors => :environment do
+    CSV.foreach('book_authors.csv') do |row|
+      authors_id,books_id=row
+      BookAuthor.create(authors_id:authors_id,books_id:books_id)
+    end
+    puts "Seeding book_authors is done"
+  end
+end
+namespace :import do
+  desc "Importing book_genres CSV file into our database using rails"
+  task :book_genres => :environment do
+    CSV.foreach('book_genres.csv') do |row|
+     books_id,genres_id=row
+      BookGenre.create(books_id:books_id,genres_id:genres_id)
+    end
+    puts "Seeding book_genres is done"
+  end
+end

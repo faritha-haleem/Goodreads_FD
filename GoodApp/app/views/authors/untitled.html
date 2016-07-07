@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reviews</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="mycss/book.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!--a class="navbar-brand" href=""><span style="color:#B58AA5" >Hear the Critics.</span></a-->
+		  <p class="navbar-brand" >Hear The Critics.</p>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="homepage.html">HOME</a></li>
+			<li class="active"><a href="fiction.html">REVIEWS<span class="sr-only">(current)</span></a></li>
+			<li><a href="profile.html">PROFILE</a></li>
+			<li><a href="shop.html">SHOP</a></li>
+			<li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Enter value..">
+			<input type="submit" class="btn btn-default" role="button" value="Search"></input>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="fiction.html">Fiction<span class="sr-only">(current)</span></a></li>
+            <li><a href="classics.html">Classics</a></li>
+            <li><a href="autobiography.html">Autobiography</a></li>
+            <li><a href="thriller.html">Thriller</a></li>
+			<li><a href="adventure.html">Adventure</a></li>
+          </ul>
+        </div>
+		
+		<!--common black box-->
+		<div id="fade" class="black_overlay">
+		</div>
+		
+        <div class="col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Speak Fiction.</h1>
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="thumbnail">
+						<img src="images/fiction/eragon.jpg" alt="Eragon">
+						<div class="caption">
+							<h3>Eragon</h3>
+							<h6>By Christopher Paolini</h6>
+							<p style="font-size:12px;">One boy . . .One dragon . . .
+								A world of adventure. When Eragon finds a polished blue stone in the forest,
+								he thinks it is the lucky discovery . . .</p>
+							<p><a href = "javascript:void(0)" class= "btn btn-info" onclick = "document.getElementById('eragon').style.display='block';document.getElementById('fade').style.display='block'">Continue reading</a></p>
+							<div id="eragon" class="white_content">
+							<p align="right" ><a href="fiction.html"><span class="glyphicon glyphicon-remove-circle"></span></a></p>
+							<p align="justify" style="font-size:20px; padding-right:30px;">
+								One boy . . .
+								One dragon . . .
+								A world of adventure.
+								When Eragon finds a polished blue stone in the forest,
+								he thinks it is the lucky discovery of a poor farm boy;
+								perhaps it will buy his family meat for the winter. But 
+								when the stone brings a dragon hatchling, Eragon soon 
+								realizes he has stumbled upon a legacy nearly as old as 
+								the Empire itself.Overnight his simple life is shattered,
+								and he is thrust into a perilous new world of destiny, 
+								magic, and power. With only an ancient sword and the 
+								advice of an old storyteller for guidance, Eragon and 
+								the fledgling dragon must navigate the dangerous terrain
+								and dark enemies of an Empire ruled by a king whose evil
+								knows no bounds.Can Eragon take up the mantle of the 
+								legendary Dragon Riders? The fate of the Empire may rest
+								in his hands.
+							</p>
+							<a href="submit.html" class="btn btn-default" >Submit a review</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img src="images/fiction/Twilight.jpg" alt="Twilight">
+						<div class="caption">
+							<h3>Twilight</h3>
+							<h6>By Stephanie Meyer</h6>
+							<p style="font-size:12px;">About three things I was absolutely positive:First, Edward 
+								was a vampire.Second, there was a part of him - and I didn't
+								know how . . .</p>
+							<p><a href = "javascript:void(0)" class= "btn btn-info" onclick = "document.getElementById('twilight').style.display='block';document.getElementById('fade').style.display='block'">Continue reading</a></p>
+							<div id="twilight" class="white_content">
+							<p align="right" ><a href="fiction.html"><span class="glyphicon glyphicon-remove-circle"></span></a></p>
+							<p align="justify" style="font-size:20px; padding-right:30px;">
+								About three things I was absolutely positive:First, Edward 
+								was a vampire.Second, there was a part of him - and I didn't
+								know how dominant that part might be - that thirsted for my
+								blood.And third, I was unconditionally and irrevocably in 
+								love with him.When Bella Swan moves to the gloomy town of 
+								Forks and meets Edward Cullen, her life takes a thrilling and
+								terrifying turn. With his porcelain skin, golden eyes, mesmerizing
+								voice, and supernatural gifts, Edward is both irresistible and 
+								impenetrable. Up until now, he has managed to keep his true identity
+								hidden, but Bella is determined to uncover his dark secret.What 
+								Bella doesn't realize is the closer she gets to him, the more she 
+								is putting herself and those around her at risk. And it might be
+								too late to turn back...
+							</p>
+							<a href="submit.html" class="btn btn-default" >Submit a review</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img src="images/fiction/harry.jpg" alt="harry">
+						<div class="caption">
+							<h3>Harry Potter - 7</h3>
+							<h6>By J.K.Rowling</h6>
+							<p style="font-size:12px;">Harry arrives at the Burrow, and when his friends get there,
+							he learns that Moody has been killed and George Weasley maimed . . .</p>
+							<p><a href = "javascript:void(0)" class= "btn btn-info" onclick = "document.getElementById('harry').style.display='block';document.getElementById('fade').style.display='block'">Continue reading</a></p>
+							<div id="harry" class="white_content">
+							<p align="right" ><a href="fiction.html"><span class="glyphicon glyphicon-remove-circle"></span></a></p>
+							<p align="justify" style="font-size:20px; padding-right:30px;">
+							Harry arrives at the Burrow, and when his friends get there, he learns that Moody has been killed and George Weasley maimed in the chase. Harry begins to have visions in which he sees what Voldemort is doing through Voldemort’s eyes, and witnesses Voldemort interrogating a wand maker, trying to find out how to defeat Harry.Harry, Ron, and Hermione assemble the books and tools necessary to embark on the quest that Dumbledore left them: to find and destroy the Horcruxes into which Voldemort placed fragments of his soul, making himself immortal as long as the objects survive. Rufus Scrimgeour, the Minister of Magic, delivers to them the items Dumbledore left them in his will. Harry is left the Snitch he caught in his first Quidditch match, as well as the Sword of Gryffindor, which Scrimgeour does not give him, claiming it did not belong to Dumbledore. Ron is left a device called a Deluminator that turns lights off, and Hermione is left a book of wizard fairy tales. None of them have any idea what the items mean.
+							</p>
+							<a href="submit.html" class="btn btn-default" >Submit a review</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img src="images/fiction/hobbit.jpg" alt="hobbit">
+						<div class="caption">
+							<h3>Hobbit</h3>
+							<h6>By J.R.R. Tolkien</h6>
+							<p style="font-size:12px;">In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, . . .</p>
+							<p><a href = "javascript:void(0)" class= "btn btn-info" onclick = "document.getElementById('harry').style.display='block';document.getElementById('fade').style.display='block'">Continue reading</a></p>
+							<div id="harry" class="white_content">
+							<p align="right" ><a href="fiction.html"><span class="glyphicon glyphicon-remove-circle"></span></a></p>
+							<p align="justify" style="font-size:20px; padding-right:30px;">
+							In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort.
+Written for J.R.R. Tolkien’s own children, The Hobbit met with instant critical acclaim when it was first published in 1937. Now recognized as a timeless classic, this introduction to the hobbit Bilbo Baggins, the wizard Gandalf, Gollum, and the spectacular world of Middle-earth recounts of the adventures of a reluctant hero, a powerful and dangerous ring, and the cruel dragon Smaug the Magnificent. The text in this 372-page paperback edition is based on that first published in Great Britain by Collins Modern Classics (1998), and includes a note on the text by Douglas A. Anderson (2001). Unforgettable!
+							</p>
+							<a href="submit.html" class="btn btn-default" >Submit a review</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="thumbnail">
+						<img src="images/fiction/inferno.jpg" alt="inferno">
+						<div class="caption">
+							<h3>Inferno</h3>
+							<h6>By Dan Brown</h6>
+							<p style="font-size:12px;">In his international blockbusters The Da Vinci Code, Angels & Demons, and The Lost Symbol, Dan Brown masterfully fused history . . .</p>
+							<p><a href = "javascript:void(0)" class= "btn btn-info" onclick = "document.getElementById('inferno').style.display='block';document.getElementById('fade').style.display='block'">Continue reading</a></p>
+							<div id="inferno" class="white_content">
+							<p align="right" ><a href="fiction.html"><span class="glyphicon glyphicon-remove-circle"></span></a></p>
+							<p align="justify" style="font-size:20px; padding-right:30px;">
+							In his international blockbusters The Da Vinci Code, Angels & Demons, and The Lost Symbol, Dan Brown masterfully fused history, art, codes, and symbols. In this riveting new thriller, Brown returns to his element and has crafted his highest-stakes novel to date.In the heart of Italy, Harvard professor of symbology Robert Langdon is drawn into a harrowing world centered on one of history’s most enduring and mysterious literary masterpieces . . . Dante’s Inferno.Against this backdrop, Langdon battles a chilling adversary and grapples with an ingenious riddle that pulls him into a landscape of classic art, secret passageways, and futuristic science. Drawing from Dante’s dark epic poem, Langdon races to find answers and decide whom to trust . . . before the world is irrevocably altered. 
+							</p>
+							<a href="submit.html" class="btn btn-default" >Submit a review</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="thumbnail">
+						<img src="images/fiction/placecalledhere.jpg" alt="placecalledhere">
+						<div class="caption">
+							<h3>Place Called Here</h3>
+							<h6>By Cecilia Ahern</h6>
+							<p style="font-size:12px;">Since Sandy Shortt's classmate disappeared 20 years ago, she has been obsessed with missing things. Finding becomes her goal . . .</p>
+							<p><a href = "javascript:void(0)" class= "btn btn-info" onclick = "document.getElementById('place').style.display='block';document.getElementById('fade').style.display='block'">Continue reading</a></p>
+							<div id="place" class="white_content">
+							<p align="right" ><a href="fiction.html"><span class="glyphicon glyphicon-remove-circle"></span></a></p>
+							<p align="justify" style="font-size:20px; padding-right:30px;">
+							Since Sandy Shortt's classmate disappeared 20 years ago, she has been obsessed with missing things. Finding becomes her goal - whether it's a missing sock or the graver issue of finding the people who vanish from their lives. Sandy dedicates her life to finding these missing people, offering devastated families a flicker of hope.
+							</p>
+							<a href="submit.html" class="btn btn-default" >Submit a review</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="thumbnail">
+						<img src="images/fiction/vampire.jpg" alt="vampire">
+						<div class="caption">
+							<h3>Vampire Diaries</h3>
+							<h6>By L.J.Smith</h6>
+							<p>...</p>
+							<p><a href="#" class="btn btn-default" role="button">Continue reading</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="thumbnail">
+						<img src="images/fiction/lord.jpg" alt="lord">
+						<div class="caption">
+							<h3>Lord of the Rings</h3>
+							<h6>By J.R.R. Tolkien</h6>
+							<p>...</p>
+							<p><a href="#" class="btn btn-default" role="button">Continue reading</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+      </div>
+    </div>
+  </body>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bookish.com</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" type="text/css" href="mycss/mainstyle.css">
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="1/js-image-slider.css" rel="stylesheet" type="text/css" />
+		<script src="1/js-image-slider.js" type="text/javascript"></script>
+		<script src="js/signup.js" type="text/javascript"></script>
+		<link href="1/generic.css" rel="stylesheet" type="text/css" />
+		
+    </head>
+    <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<p class="navbar-brand" >Bookish.</p>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="homepage.html">HOME<span class="sr-only">(current)</span></a></li>
+				<li><a href="fiction.html">REVIEWS</a></li>
+				<li><a href="profile.html">PROFILE</a></li>
+				<li><a href="shop.html">SHOP</a></li>
+				<li><a href="contact.html">CONTACT US</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="header">
+		<h1>Find your next favourite book.</h1>
+		<h4>BOOKS + LOVE + READ = BOOKISH</h4>
+		<a href = "javascript:void(0)" class= "btn btn-info" onload="document.registration.firstname.focus();" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Join Us Now</a>
+			<div id="light" class="white_content">
+			<form name='registration' onSubmit="return formValidation();">
+				<p align="right" ><a href="homepage.html">
+				<span class="glyphicon glyphicon-remove-circle"></span>
+				</a></p>
+				<h1>Join Us</h1>
+				<label for="firstname">First Name </label>
+				<br>
+				<input type="text" id="firstname" onblur="allalphabetic(document.registration.firstname)">
+				<p class="rq">*Enter alphabets only.</p>
+				<label for="lastname">Last Name </label>
+				<br>
+				<input type="text" id="lastname" onblur="allalphabetic(document.registration.lastname)">
+				<p class="rq">*Enter alphabets only.</p>
+				<label for="sex" id="gender" >Gender</label>
+				<input type="radio" name="sex" value="male" >Male &nbsp&nbsp&nbsp&nbsp
+				<input type="radio" name="sex" value="female">Female
+				<br>
+				<label for="email">Email </label>
+				<br>
+				<input type="text" id="email" onblur="requiredemail()">
+				<p class="rq">*Required Field.</p>
+				<label for="pass">Password </label>
+				<br>
+				<input type="password" id="pass" onblur="checkpass()">
+				<p class="rq">*Minimum 8 characters.</p>
+				<label for="cpassword">Confirm Password</label>
+				<br>
+				<input type="password" id="cpassword" onblur="confirmpass(document.registration.pass,document.registration.cpassword)">
+				<br><br>
+				<button type="submit" class="btn btn-default" onclick="requiredemail();confirmpass(document.registration.pass,document.registration.cpassword);">Sign Up</button>
+				<br>
+			</form>
+			<!--a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a-->
+			</div>
+			<div id="fade" class="black_overlay">
+			</div>
+			<br><br>
+				<p><span style="font-size:2em" >Already a member? Then Click <a href = "javascript:void(0)" onclick = "document.getElementById('login').style.display='block';document.getElementById('fade1').style.display='block'">HERE</a></span></p>
+				<div id="login" class="white_content2">
+					<form>
+					<p align="right" ><a href="homepage.html">
+					<span class="glyphicon glyphicon-remove-circle"></span>
+					</a></p>
+					<h1>Login</h1>
+					<label for="uname">Username </label><br>
+					<input type="text" id="uname">
+					<br><br>
+					<label for="pass">Password </label><br>
+					<input type="password" id="passw">
+					<br><br>
+					<button type="submit" class="btn btn-default" formmethod="post" formaction="homepage.html">Login</button>
+					<br><br>
+				</form>
+				</div>
+				<div id="fade1" class="black_overlay2" >
+				</div>
+	</div>
+	<div id="sliderFrame">
+        <div id="slider">
+            <a href="homepage.html" target="_blank">
+                <img src="images/image-slider-1.jpg" alt="Welcome to Bookish.com" />
+            </a>
+            <img src="images/image-slider-2.jpg" alt="The largest Digital library." />
+            <img src="images/image-slider-3.jpg" alt="Books for all ages." />
+            <img src="images/image-slider-4.jpg" alt="Wide-ranging Selection." />
+            <img src="images/image-slider-5.jpg" alt="Read Anytime. Anywhere."/>
+        </div>
+	</div>
+	<div id="part1">
+			<div id="section" class="thumbnail">
+				<a href="homepage.html">
+				<img src="images/buddingauthor.jpg"/>
+				</a>
+				<div class="caption">
+					<h4>Budding Author? Come get Published!</h4>
+				</div>
+			</div>
+			<div id="section" class="thumbnail">
+				<a href="homepage.html">
+				<img src="images/review.jpg"/>
+				</a>
+				<div class="caption">
+					<h4>Read a Book? Review here</h4>
+				</div>
+			</div>
+	</div>
+	<div id="part2">
+			<div id="section1">
+				<img src="images/temp.jpg"/>
+			</div>
+	</div>
+	<div id="part3">
+			<div id="section1">
+				<img src="images/quotes.jpg"/>
+			</div>
+	</div>
+	<div class="footer" id="footer">
+	<p>Copyright &copy; www.bookish.com</p>
+	</div>
+    </body>
+</html>

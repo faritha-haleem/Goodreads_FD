@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#namespace :import do
+#desc "Importing Books CSV file into our database using rails"
+#task:books => :environment do
+#  CSV.foreach('books.csv') do |row|
+
+#end
+#end
+#end

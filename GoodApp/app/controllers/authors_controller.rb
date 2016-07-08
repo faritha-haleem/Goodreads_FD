@@ -5,4 +5,7 @@ class AuthorsController < ApplicationController
   def books
     @title="Books"
   end
+  def show
+    @authors=Author.all
+  end
 end

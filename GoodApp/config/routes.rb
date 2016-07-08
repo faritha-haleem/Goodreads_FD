@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'publisher/home'
 
-  get 'author/show'
+  get 'authors/show'
 
   get 'author/home'
 

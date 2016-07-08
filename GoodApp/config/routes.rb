@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'genres/show'
+
   resources :user
 
   get 'publisher/show'
@@ -21,6 +23,8 @@ Rails.application.routes.draw do
   get 'user/create'
 
   get 'user/login'
+
+  get 'genre/show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #get '/about', :to => 'authors#about'

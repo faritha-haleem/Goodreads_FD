@@ -16,7 +16,7 @@ class UserController < ApplicationController
   end
 
   def login
-    
+
     @usern = User.find(params[:username])
     @userpass = User.find(params[:password])
 

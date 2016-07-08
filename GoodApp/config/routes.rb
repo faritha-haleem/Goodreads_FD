@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'homepage/show'
 
   resources :user
 
@@ -17,13 +16,13 @@ Rails.application.routes.draw do
 
   get 'books/rate'
 
-  root 'user#welcome'
+  root 'homepage#show'
 
   get 'user/create'
 
-  get 'user/homepage'
+  get 'user/login'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/about', :to => 'authors#about'
+  #get '/about', :to => 'authors#about'
   get '/books', :to => 'authors#books'
   get '/show', :to => 'homepage#show'
 end

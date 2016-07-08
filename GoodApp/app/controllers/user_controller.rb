@@ -15,21 +15,17 @@ class UserController < ApplicationController
 	#	@signupmsg = "Username already taken";
 	#end
 	#render plain: @user
-	redirect_to "user#welcome"
+	redirect_to "homepage#show"
   end
 
   def login
-  	#render plain: params[:login].inspect
-  end
+    @user = User.find(params[:username])
+    @userpass = User.find(params[:password])
 
-  def homepage
-    @user = User.find(params.require(:login).permit(:username, :password))
-    #if @user == nil
-    #	redirect_to "user#welcome"
-    #	@loginmsg="Username or password is incorrect."
-    #else
-    	@loginmsg = "Welcome to Freash Reads #{@user.username}"
-    #end
+    if (@user.username == @userpass.username)
+    	redirect_to "homepage#show"
+    else
+    end
 
   end
 

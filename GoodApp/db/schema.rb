@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160706082721) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_book_authors_on_author_id", using: :btree
+    t.index ["book_id", "author_id"], name: "book_id", unique: true, using: :btree
     t.index ["book_id"], name: "index_book_authors_on_book_id", using: :btree
   end
 

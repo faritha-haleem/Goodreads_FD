@@ -16,7 +16,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <p class="navbar-brand" >Bookish.</p>
+      <p class="navbar-brand" >Fresh Reads</p>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -32,52 +32,107 @@
 <div id="header">
   <h1>Find your next favourite book.</h1>
   <h4>BOOKS + LOVE + READ = BOOKISH</h4>
+
   <a href = "javascript:void(0)" class= "btn btn-info" onload="document.registration.firstname.focus();" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Join Us Now</a>
   <div id="light" class="white_content">
-    <form name='registration' onSubmit="return formValidation();">
       <p align="right" ><a href="about">
         <span class="glyphicon glyphicon-remove-circle"></span>
       </a></p>
-      <h1>Join Us</h1>
-      <label for="firstname">First Name </label>
-      <br>
-      <input type="text" id="firstname" onblur="allalphabetic(document.registration.firstname)">
-      <p class="rq">*Enter alphabets only.</p>
-      <label for="lastname">Last Name </label>
-      <br>
-      <input type="text" id="lastname" onblur="allalphabetic(document.registration.lastname)">
-      <p class="rq">*Enter alphabets only.</p>
-      <label for="sex" id="gender" >Gender</label>
-      <input type="radio" name="sex" value="male" >Male &nbsp&nbsp&nbsp&nbsp
-      <input type="radio" name="sex" value="female">Female
-      <br>
-      <label for="email">Email </label>
-      <br>
-      <input type="text" id="email" onblur="requiredemail()">
-      <p class="rq">*Required Field.</p>
-      <label for="pass">Password </label>
-      <br>
-      <input type="password" id="pass" onblur="checkpass()">
-      <p class="rq">*Minimum 8 characters.</p>
-      <label for="cpassword">Confirm Password</label>
-      <br>
-      <input type="password" id="cpassword" onblur="confirmpass(document.registration.pass,document.registration.cpassword)">
-      <br><br>
-      <button type="submit" class="btn btn-default" onclick="requiredemail();confirmpass(document.registration.pass,document.registration.cpassword);">Sign Up</button>
-      <br>
-    </form>
-    <!--a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a-->
+      <h1> Join Us</h1><br>
+      <%= form_for :signup, url: "user#create"   do |f| %>
+          <p>
+            <%= f.label :FirstName %><br>
+            <%= f.text_field :fname %>
+          </p>
+
+          <p>
+            <%= f.label :LastName %><br>
+            <%= f.text_field :lname %>
+          </p>
+
+          <p>
+            <%= f.label :Username %><br>
+            <%= f.text_field :username %>
+          </p>
+
+          <p>
+            <%= f.label :Email %><br>
+            <%= f.text_field :email %>
+          </p>
+
+          <p>
+            <%= f.label :Password %><br>
+            <%= f.password_field :password %>
+          </p>
+
+          <p>
+            <%= f.submit :SignUp%>
+          </p>
+      <% end %>
+
+      <!--
+      <form name='registration' onSubmit="return formValidation();">
+        <p align="right" ><a href="about">
+          <span class="glyphicon glyphicon-remove-circle"></span>
+        </a></p>
+        <h1>Join Us</h1>
+        <label for="firstname">First Name </label>
+        <br>
+        <input type="text" id="firstname" onblur="allalphabetic(document.registration.firstname)">
+        <p class="rq">*Enter alphabets only.</p>
+        <label for="lastname">Last Name </label>
+        <br>
+        <input type="text" id="lastname" onblur="allalphabetic(document.registration.lastname)">
+        <p class="rq">*Enter alphabets only.</p>
+        <label for="sex" id="gender" >Gender</label>
+        <input type="radio" name="sex" value="male" >Male &nbsp&nbsp&nbsp&nbsp
+        <input type="radio" name="sex" value="female">Female
+        <br>
+        <label for="email">Email </label>
+        <br>
+        <input type="text" id="email" onblur="requiredemail()">
+        <p class="rq">*Required Field.</p>
+        <label for="pass">Password </label>
+        <br>
+        <input type="password" id="pass" onblur="checkpass()">
+        <p class="rq">*Minimum 8 characters.</p>
+        <label for="cpassword">Confirm Password</label>
+        <br>
+        <input type="password" id="cpassword" onblur="confirmpass(document.registration.pass,document.registration.cpassword)">
+        <br><br>
+        <button type="submit" class="btn btn-default" onclick="requiredemail();confirmpass(document.registration.pass,document.registration.cpassword);">Sign Up</button>
+        <br>
+      </form>-->
+      <!--a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a-->
+
+
   </div>
   <div id="fade" class="black_overlay">
   </div>
   <br><br>
   <p><span style="font-size:2em" >Already a member? Then Click <a href = "javascript:void(0)" onclick = "document.getElementById('login').style.display='block';document.getElementById('fade1').style.display='block'">HERE</a></span></p>
   <div id="login" class="white_content2">
-    <form>
       <p align="right" ><a href="about">
         <span class="glyphicon glyphicon-remove-circle"></span>
       </a></p>
       <h1>Login</h1>
+      <%= form_for :login, url: "user#login" do |f| %>
+          <p>
+            <%= f.label :Username %><br>
+            <%= f.text_field :username %>
+          </p>
+
+          <p>
+            <%= f.label :password %><br>
+            <%= f.password_field :password %>
+          </p>
+
+          <p>
+            <%= f.submit :Login%>
+          </p>
+      <% end %>
+
+      <!--
       <label for="uname">Username </label><br>
       <input type="text" id="uname">
       <br><br>
@@ -86,10 +141,15 @@
       <br><br>
       <button type="submit" class="btn btn-default" formmethod="post" formaction="about">Login</button>
       <br><br>
-    </form>
+      -->
   </div>
   <div id="fade1" class="black_overlay2" >
   </div>
+  <% if flash[:alert] %>
+      <div id="alert">
+        <%= flash[:alert] %>
+      </div>
+  <% end %>
 </div>
 <div id="sliderFrame">
   <div id="slider">

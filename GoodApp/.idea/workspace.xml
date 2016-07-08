@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d3f072e-727c-4dd5-be55-09f049b29273" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/user_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/user_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/authors/about.html.erb" afterPath="$PROJECT_DIR$/app/views/authors/about.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/homepage/show.html.erb" afterPath="$PROJECT_DIR$/app/views/homepage/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-    </list>
+    <list default="true" id="1d3f072e-727c-4dd5-be55-09f049b29273" name="Default" comment="" />
     <ignored path="GoodApp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -625,12 +619,12 @@
       <workItem from="1467795046790" duration="1041000" />
       <workItem from="1467819343727" duration="594000" />
       <workItem from="1467864883741" duration="15390000" />
-      <workItem from="1467958235312" duration="11365000" />
+      <workItem from="1467958235312" duration="11438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35994000" />
+    <option name="totallyTimeSpent" value="36067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />

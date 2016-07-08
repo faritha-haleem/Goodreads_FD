@@ -39,7 +39,7 @@
         <span class="glyphicon glyphicon-remove-circle"></span>
       </a></p>
       <h1> Join Us</h1><br>
-      <%= form_for :signup, url: "user#create"   do |f| %>
+      <%= form_for :signup, url: { action: "create", controller: "user"}   do |f| %>
           <p>
             <%= f.label :FirstName %><br>
             <%= f.text_field :fname %>

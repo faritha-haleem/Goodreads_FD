@@ -1,18 +1,23 @@
-<table>
-  <tr>
-    <th>Book Name</th>
-    <td><%= %></td>
-    <th>Publisher Id</th>
-    <td><%= %></td>
-    <th>ISBN number</th>
-  </tr>
-  <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= %></td>
-        <td><%= book.publisher_id %></td>
-        <td><%= %></td>
-        <td><%= book.isbn %></td>
-      </tr>
+<div style="font-size: 20px">
+<h1><%= @books.title%></h1>
+<% @bookgenres.each do |genre| %>
+<h5><%= genre.genre_name %></h5>
+<% end %>
+<hr/>
+<h1>Reviews</h1>
+<% @reviews.each do |review| %>
+<%= review.review_msg %><br/>
   <% end %>
-</table>
+
+<%= form_for :review, url: "books#review" do |f| %>
+    <p>
+      <%= f.text_area :review_msg, :value => "Write Review", cols:"50", rows: "2" %>
+      <%= f.submit 'Submit' %>
+    </p>
+<% end %>
+<hr/>
+<h1>Rating</h1>
+<% @ratings.each do |rating| %>
+    <%= rating.rate %></br>
+<% end %>
+</div>

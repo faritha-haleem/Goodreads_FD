@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :review
+  resources :user
+
+  get 'review/create'
+
+  get 'review/show'
 
   get 'genres/show'
-
-  resources :user
 
   get 'publisher/show'
 
@@ -11,6 +15,8 @@ Rails.application.routes.draw do
   get 'authors/show'
 
   get 'author/home'
+
+  get 'books/index'
 
   get 'books/show'
 

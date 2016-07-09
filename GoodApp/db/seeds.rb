@@ -20,12 +20,12 @@ CSV.foreach('publishers.csv') do |row|
   pub_name,pub_year,pub_address=row
   Publisher.create(pub_name:pub_name,pub_address:pub_address)
 end
+puts "Seeding publishers is done"
 CSV.foreach('books.csv') do |row|
   title,publishers_id,isbn=row
   Book.create(title:title,publisher_id:publishers_id,isbn:isbn)
 end
 puts "Seeding Books is done"
-puts "Seeding publishers is done"
 CSV.foreach('book_authors.csv') do |row|
   authors_id,books_id=row
   BookAuthor.create(author_id:authors_id,book_id:books_id)

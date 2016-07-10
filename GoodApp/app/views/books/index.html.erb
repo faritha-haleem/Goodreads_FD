@@ -1,19 +1,68 @@
-<table>
-  <tr>
-    <th>Book Name</th>
-    <td><%= %></td>
-    <th>Publisher Id</th>
-    <td><%= %></td>
-    <th>ISBN number</th>
-  </tr>
-  <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= %></td>
-        <td><%= book.publisher_id %></td>
-        <td><%= %></td>
-        <td><%= book.isbn %></td>
-        <td><%= link_to 'Show', books_show_path(book)%></td>
-      </tr>
-<% end %>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reviews</title>
+  <%= stylesheet_link_tag :bootstrap %>
+  <%= stylesheet_link_tag :mybook %>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand" >Here's our Collection!</p>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/show">HOME</a></li>
+        <li class="active"><a href="/books/index">BOOKS<span class="sr-only">(current)</span></a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Enter value..">
+        <input type="submit" class="btn btn-default" role="button" value="Search"></input>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+
+      </ul>
+    </div>
+
+    <!--common black box-->
+    <div id="fade" class="black_overlay">
+    </div>
+
+    <div class="col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Take your Pick.</h1>
+      <div class="table-responsive"></div>
+      <table class="table">
+        <thead>
+          <th>Book Name</th>
+          <th>Author Name</th>
+          <th>Publisher Name</th>
+          <th>ISBN number</th>
+          <th>Submit Review</th>
+        </thead>
+        <% @books.each do |book| %>
+            <tr>
+              <td><%= book.title %></td>
+              <td><%= book.author_name %></td>
+              <td><%= book.pub_name %></td>
+              <td><%= book.isbn %></td>
+              <td><%= link_to 'Review', books_show_path(book)%></td>
+            </tr>
+        <% end %>
+      </table>
+      </div>
+     </div>
+    </div>
+  </div>
+  </body>
+</html>

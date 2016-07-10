@@ -1,98 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reviews</title>
-  <%= stylesheet_link_tag :bootstrap %>
-  <%= stylesheet_link_tag :mybook %>
-</head>
+ <div style="font-size: 20px">
+        <h1><%= @books.title%></h1>
+        <% @bookgenres.each do |genre| %>
+            <h5><%= genre.genre_name %></h5>
+        <% end %>
+        <hr/>
+        <h1>Reviews</h1>
+        <% @reviews.each do |review| %>
+            <%= review.review_msg %><br/>
+        <% end %>
 
-<body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <!--a class="navbar-brand" href=""><span style="color:#B58AA5" >Hear the Critics.</span></a-->
-      <p class="navbar-brand" >Hear The Critics.</p>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="homepage.html">HOME</a></li>
-        <li class="active"><a href="fiction.html">REVIEWS<span class="sr-only">(current)</span></a></li>
-        <li><a href="profile.html">PROFILE</a></li>
-        <li><a href="shop.html">SHOP</a></li>
-        <li><a href="contact.html">CONTACT US</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <input type="text" class="form-control" placeholder="Enter value..">
-        <input type="submit" class="btn btn-default" role="button" value="Search"></input>
-      </form>
-    </div>
-  </div>
-</nav>
+        <%= form_for :review, url: "books#review" do |f| %>
+            <p>
+              <%= f.text_area :review_msg, :value => "Write Review", cols:"50", rows: "2" %>
+              <%= f.submit 'Submit' %>
+            </p>
+        <% end %>
+        <hr/>
+        <h1>Rating</h1>
+        <% @ratings.each do |rating| %>
+            <%= rating.rate %></br>
+        <% end %>
+ </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-        <li class="active"><a href="/books/show/">Fiction<span class="sr-only">(current)</span></a></li>
-        <li><a href="classics.html">Classics</a></li>
-        <li><a href="autobiography.html">Autobiography</a></li>
-        <li><a href="thriller.html">Thriller</a></li>
-        <li><a href="adventure.html">Adventure</a></li>
-      </ul>
-    </div>
-
-    <!--common black box-->
-    <div id="fade" class="black_overlay">
-    </div>
-
-    <div class="col-md-10 col-md-offset-2 main">
-      <h1 class="page-header">Speak Fiction.</h1>
-      <table>
-  <tr>
-    <th>Book Name</th>
-    <td><%= %></td>
-    <th>Publisher Id</th>
-    <td><%= %></td>
-    <th>ISBN number</th>
-  </tr>
-  <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= %></td>
-        <td><%= book.publisher_id %></td>
-        <td><%= %></td>
-        <td><%= book.isbn %></td>
-      </tr>
-  <% end %>
-</table>
-</div>
-  </div>
-  </div>
-  </body>
-</html>
-=======
-<div style="font-size: 20px">
-<h1><%= @books.title%></h1>
-<% @bookgenres.each do |genre| %>
-<h5><%= genre.genre_name %></h5>
-<% end %>
-<hr/>
-<h1>Reviews</h1>
-<% @reviews.each do |review| %>
-<%= review.review_msg %><br/>
-  <% end %>
-
-<%= form_for :review, url: "books#review" do |f| %>
-    <p>
-      <%= f.text_area :review_msg, :value => "Write Review", cols:"50", rows: "2" %>
-      <%= f.submit 'Submit' %>
-    </p>
-<% end %>
-<hr/>
-<h1>Rating</h1>
-<% @ratings.each do |rating| %>
-    <%= rating.rate %></br>
-<% end %>
-</div>

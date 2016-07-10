@@ -20,18 +20,15 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="about">HOME<span class="sr-only">(current)</span></a></li>
-        <li><a href="/books/show/">REVIEWS</a></li>
-        <li><a href="profile.html">PROFILE</a></li>
-        <li><a href="shop.html">SHOP</a></li>
-        <li><a href="contact.html">CONTACT US</a></li>
+        <li class="active"><a href="/show">HOME<span class="sr-only">(current)</span></a></li>
+        <li><a href="/books/index">BOOKS</a></li>
       </ul>
     </div>
   </div>
 </nav>
 <div id="header">
   <h1>Find your next favourite book.</h1>
-  <h4>BOOKS + LOVE + READ = BOOKISH</h4>
+  <h4>BOOKS + LOVE + READ = FRESHREADS</h4>
 
   <a href = "javascript:void(0)" class= "btn btn-info" onload="document.registration.firstname.focus();" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Join Us Now</a>
   <div id="light" class="white_content">
@@ -129,8 +126,6 @@
           <%= f.submit :Login%> 
         </p>
          <% end %>
-
-
       <!--
       <label for="uname">Username </label><br>
       <input type="text" id="uname">
@@ -163,15 +158,15 @@
 </div>
 <div id="part1">
   <div id="section" class="thumbnail">
-    <a href="about">
+    <a href="/show">
       <%= image_tag("buddingauthor.jpg", :alt => "Budding Author") %>
     </a>
     <div class="caption">
-      <h4>Budding Author? Come get Published!</h4>
+      <h4>Know any cool books? Share them here!</h4>
     </div>
   </div>
   <div id="section" class="thumbnail">
-    <a href="about">
+    <a href="/books/index">
       <%= image_tag("review.jpg", :alt => "Review") %>
     </a>
     <div class="caption">
@@ -179,18 +174,8 @@
     </div>
   </div>
 </div>
-<div id="part2">
-  <div id="section1">
-    <%= image_tag("temp.jpg", :alt => "temp") %>
-  </div>
-</div>
-<div id="part3">
-  <div id="section1">
-    <%= image_tag("quotes.jpg", :alt => "Quotes") %>
-  </div>
-</div>
 <div class="footer" id="footer">
-  <p>Copyright &copy; www.bookish.com</p>
+  <p>Copyright &copy; www.freshreads.com</p>
 </div>
 </body>
 </html>

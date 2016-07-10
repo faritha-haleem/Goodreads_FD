@@ -1,4 +1,5 @@
 class AuthorController < ApplicationController
+  has_many :books
   def show
   end
 

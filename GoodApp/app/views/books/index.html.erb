@@ -20,49 +20,30 @@
         <li class="active"><a href="/books/index">BOOKS<span class="sr-only">(current)</span></a></li>
       </ul>
       <form class="navbar-form navbar-right">
-        <input type="text" class="form-control" placeholder="Enter value..">
-        <input type="submit" class="btn btn-default" role="button" value="Search"></input>
+        <input type="text" class="form-control" placeholder="Enter value.."/>
+        <input type="submit" class="btn btn-default" role="button" value="Search"/>
       </form>
     </div>
   </div>
 </nav>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-
-      </ul>
-    </div>
-
-    <!--common black box-->
-    <div id="fade" class="black_overlay">
-    </div>
-
-    <div class="col-md-10 col-md-offset-2 main">
+  <div class="col-md-12 main">
       <h1 class="page-header">Take your Pick.</h1>
-      <div class="table-responsive"></div>
-      <table class="table">
-        <thead>
-          <th>Book Name</th>
-          <th>Author Name</th>
-          <th>Publisher Name</th>
-          <th>ISBN number</th>
-          <th>Submit Review</th>
-        </thead>
-        <% @books.each do |book| %>
-            <tr>
-              <td><%= book.title %></td>
-              <td><%= book.author_name %></td>
-              <td><%= book.pub_name %></td>
-              <td><%= book.isbn %></td>
-              <td><%= link_to 'Review', books_show_path(book)%></td>
-            </tr>
-        <% end %>
-      </table>
-      </div>
-     </div>
+      <% @books.each do |book| %>
+          <div class="col-md-3">
+            <div class="thumbnail">
+              <div class="caption">
+                <h3><%= book.title %></h3>
+                <h5>Written by <%= book.author_name %></h5><br>
+                <h7>Published by <%= book.pub_name %></h7><br>
+                <h7>ISBN: <%= book.isbn %></h7><br>
+                <p><%= link_to 'Review this Book', books_show_path(book)%></p>
+              </div>
+            </div>
+          </div>
+      <% end %>
     </div>
-  </div>
+    </div>
   </body>
 </html>

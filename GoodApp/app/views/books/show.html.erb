@@ -1,7 +1,34 @@
- <div style="font-size: 20px">
-        <h1><%= @books.title%></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reviews</title>
+  <%= stylesheet_link_tag :bootstrap %>
+  <%= stylesheet_link_tag :mybook %>
+  <%= javascript_include_tag "star" %>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand" >Share your view.</p>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/show">HOME</a></li>
+        <li><a href="/books/index">BOOKS</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="col-md-12 main">
+    <h1 class="page-header"><%= @books.title%></h1>
+    <h4>Written by&nbsp;<%= @books.author_name %></h4>
         <% @bookgenres.each do |genre| %>
-            <h5><%= genre.genre_name %></h5>
+            <%= genre.genre_name %></h6>
         <% end %>
         <hr/>
         <h1>Reviews</h1>
@@ -11,7 +38,9 @@
 
         <%= form_for :review, url: "books#review" do |f| %>
             <p>
-              <%= f.text_area :review_msg, :value => "Write Review", cols:"50", rows: "2" %>
+              <%= f.text_area :review_msg, :value => "Write Review" , cols:"75", rows: "10" %>
+            </p>
+        <p>
               <%= f.submit 'Submit' %>
             </p>
         <% end %>
@@ -21,4 +50,7 @@
             <%= rating.rate %></br>
         <% end %>
  </div>
+</div>
+</body>
+</html>
 

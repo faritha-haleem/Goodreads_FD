@@ -15,20 +15,12 @@ class UserController < ApplicationController
 	redirect_to "/show"
   end
 
-  def login
+  def show
 
-    @usern = User.find(params[:username])
-    @userpass = User.find(params[:password])
-
-    if (@usern.username == @userpass.username)
-      flash[:alert] = "Post successfully created"
-    	redirect_to "/show"
-
-    else
-      redirect_to "/show"
-    end
 
   end
+  def login
 
+  end
 
 end

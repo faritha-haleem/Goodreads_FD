@@ -21,7 +21,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="about">HOME<span class="sr-only">(current)</span></a></li>
-        <li><a href="fiction.html">REVIEWS</a></li>
+        <li><a href="/books/show/">REVIEWS</a></li>
         <li><a href="profile.html">PROFILE</a></li>
         <li><a href="shop.html">SHOP</a></li>
         <li><a href="contact.html">CONTACT US</a></li>
@@ -116,21 +116,20 @@
         <span class="glyphicon glyphicon-remove-circle"></span>
       </a></p>
       <h1>Login</h1>
-      <%= form_for :login, url: "user#login" do |f| %>
-          <p>
-            <%= f.label :Username %><br>
-            <%= f.text_field :username %>
-          </p>
+      </p> <%= form_for :login, url: "user#login" do |f| %> 
+        <p> 
+          <%= f.label :Username %><br> 
+          <%= f.text_field :username %> 
+        </p>  
+        <p> 
+          <%= f.label :password %><br> 
+          <%= f.password_field :password %> 
+        </p>  
+        <p> 
+          <%= f.submit :Login%> 
+        </p>
+         <% end %>
 
-          <p>
-            <%= f.label :password %><br>
-            <%= f.password_field :password %>
-          </p>
-
-          <p>
-            <%= f.submit :Login%>
-          </p>
-      <% end %>
 
       <!--
       <label for="uname">Username </label><br>

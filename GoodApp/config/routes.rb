@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get 'user/login'
 
+  get 'user/show'
+
   get 'genre/show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

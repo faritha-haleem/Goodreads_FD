@@ -1,2 +1,16 @@
-<h1>Publisher#show</h1>
-<p>Find me in app/views/publisher/show.html.erb</p>
+<<table>
+  <tr>
+    <th>Publisher Name</th>
+    <td><%= %></td>
+    <th>Publisher Address</th>
+    <td><%= %></td>
+  </tr>
+  <% @publishers.each do |publisher| %>
+      <tr>
+        <td><%= publisher.pub_name%></td>
+        <td><%= %></td>
+        <td><%= publisher.pub_address %></td>
+        <td><%= %></td>
+      </tr>
+  <% end %>
+</table>

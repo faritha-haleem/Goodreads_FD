@@ -20,7 +20,6 @@ class UserController < ApplicationController
 
   end
   def login
-
   end
 
 end

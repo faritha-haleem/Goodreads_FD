@@ -72,3 +72,27 @@
   </div>
   </body>
 </html>
+=======
+<div style="font-size: 20px">
+<h1><%= @books.title%></h1>
+<% @bookgenres.each do |genre| %>
+<h5><%= genre.genre_name %></h5>
+<% end %>
+<hr/>
+<h1>Reviews</h1>
+<% @reviews.each do |review| %>
+<%= review.review_msg %><br/>
+  <% end %>
+
+<%= form_for :review, url: "books#review" do |f| %>
+    <p>
+      <%= f.text_area :review_msg, :value => "Write Review", cols:"50", rows: "2" %>
+      <%= f.submit 'Submit' %>
+    </p>
+<% end %>
+<hr/>
+<h1>Rating</h1>
+<% @ratings.each do |rating| %>
+    <%= rating.rate %></br>
+<% end %>
+</div>

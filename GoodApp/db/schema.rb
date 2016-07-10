@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20160706082721) do
   end
 
   create_table "book_authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "author_id"
     t.integer  "book_id"
+    t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_book_authors_on_author_id", using: :btree
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20160706082721) do
     t.string   "title",        null: false
     t.integer  "publisher_id", null: false
     t.string   "isbn",         null: false
-    t.date     "pub_year"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["publisher_id"], name: "index_books_on_publisher_id", using: :btree
@@ -55,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160706082721) do
 
   create_table "publishers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "pub_name",                  null: false
+    t.date     "pub_year"
     t.text     "pub_address", limit: 65535, null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false

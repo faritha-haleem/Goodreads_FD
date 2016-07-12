@@ -13,180 +13,66 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <p class="navbar-brand" >Fresh Reads</p>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="/show">HOME<span class="sr-only">(current)</span></a></li>
-        <li><a href="/books/index">BOOKS</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<div id="header">
-  <h1>Find your next favourite book.</h1>
-  <h4>BOOKS + LOVE + READ = FRESHREADS</h4>
-
-  <a href = "javascript:void(0)" class= "btn btn-info" onload="document.registration.firstname.focus();" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Join Us Now</a>
-  <div id="light" class="white_content">
-      <p align="right" >
-          <a>
-              <span class="glyphicon glyphicon-remove-circle" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></span>
-          </a>
-      </p>
-      <h1> Join Us</h1><br>
-      <%= form_for :signup, url: { action: "create", controller: "user"}   do |f| %>
-          <p>
-            <%= f.label :FirstName %><br>
-            <%= f.text_field :fname %>
-          </p>
-
-          <p>
-            <%= f.label :LastName %><br>
-            <%= f.text_field :lname %>
-          </p>
-
-          <p>
-            <%= f.label :Username %><br>
-            <%= f.text_field :username %>
-          </p>
-
-          <p>
-            <%= f.label :Email %><br>
-            <%= f.text_field :email %>
-          </p>
-
-          <p>
-            <%= f.label :Password %><br>
-            <%= f.password_field :password %>
-          </p>
-
-          <p>
-            <%= f.submit :SignUp%>
-          </p>
-      <% end %>
-
-      <!--
-      <form name='registration' onSubmit="return formValidation();">
-        <p align="right" ><a href="about">
-          <span class="glyphicon glyphicon-remove-circle"></span>
-        </a></p>
-        <h1>Join Us</h1>
-        <label for="firstname">First Name </label>
-        <br>
-        <input type="text" id="firstname" onblur="allalphabetic(document.registration.firstname)">
-        <p class="rq">*Enter alphabets only.</p>
-        <label for="lastname">Last Name </label>
-        <br>
-        <input type="text" id="lastname" onblur="allalphabetic(document.registration.lastname)">
-        <p class="rq">*Enter alphabets only.</p>
-        <label for="sex" id="gender" >Gender</label>
-        <input type="radio" name="sex" value="male" >Male &nbsp&nbsp&nbsp&nbsp
-        <input type="radio" name="sex" value="female">Female
-        <br>
-        <label for="email">Email </label>
-        <br>
-        <input type="text" id="email" onblur="requiredemail()">
-        <p class="rq">*Required Field.</p>
-        <label for="pass">Password </label>
-        <br>
-        <input type="password" id="pass" onblur="checkpass()">
-        <p class="rq">*Minimum 8 characters.</p>
-        <label for="cpassword">Confirm Password</label>
-        <br>
-        <input type="password" id="cpassword" onblur="confirmpass(document.registration.pass,document.registration.cpassword)">
-        <br><br>
-        <button type="submit" class="btn btn-default" onclick="requiredemail();confirmpass(document.registration.pass,document.registration.cpassword);">Sign Up</button>
-        <br>
-      </form>-->
-      <!--a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a-->
-
-
-  </div>
-  <div id="fade" class="black_overlay">
-  </div>
-  <br><br>
-  <p><span style="font-size:2em" >Already a member? Then Click <a href = "javascript:void(0)" onclick = "document.getElementById('login').style.display='block';document.getElementById('fade1').style.display='block'">HERE</a></span></p>
-  <div id="login" class="white_content2">
-      <p align="right" onclick = "document.getElementById('login').style.display='none'; document.getElementById('fade1').style.display='none'">
-          <a>
-              <span class="glyphicon glyphicon-remove-circle"></span>
-          </a>
-      </p>
-      <% if flash[:error] %>
-        <%= flash[:error] %>
-        <script>
-          document.getElementById('login').style.display='block';
-          document.getElementById('fade').style.display='block';
-        </script>
-      <% end %>
-      <h1>Login</h1>
-      <%= form_for :login, url: "user/login" do |f| %> 
-        <p> 
-          <%= f.label :Username %><br> 
-          <%= f.text_field :username %> 
-        </p>  
-        <p> 
-          <%= f.label :password %><br> 
-          <%= f.password_field :password %> 
-        </p>  
-        <p> 
-          <%= f.submit :Login%> 
-        </p>
-         <% end %>
-      <!--
-      <label for="uname">Username </label><br>
-      <input type="text" id="uname">
-      <br><br>
-      <label for="pass">Password </label><br>
-      <input type="password" id="passw">
-      <br><br>
-      <button type="submit" class="btn btn-default" formmethod="post" formaction="about">Login</button>
-      <br><br>
-      -->
-  </div>
-  <div id="fade1" class="black_overlay2" >
-  </div>
-  <% if flash[:alert] %>
-      <div id="alert">
-        <%= flash[:alert] %>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <p class="navbar-brand" >Fresh Reads</p>
       </div>
-  <% end %>
-</div>
-<div id="sliderFrame">
-  <div id="slider">
-    <a href="about" target="_blank">
-      <%= image_tag("image-slider-1.jpg", :alt => "Welcome to Bookish.com") %>
-    </a>
-    <%= image_tag("image-slider-2.jpg", :alt => "The largest Digital library") %>
-    <%= image_tag("image-slider-3.jpg", :alt => "Books for all ages") %>
-    <%= image_tag("image-slider-4.jpg", :alt => "Wide-Ranging Selection") %>
-    <%= image_tag("image-slider-5.jpg", :alt => "Read Anytime. Anywhere") %>
-  </div>
-</div>
-<div id="part1">
-  <div id="section" class="thumbnail">
-    <a href="/show">
-      <%= image_tag("buddingauthor.jpg", :alt => "Budding Author") %>
-    </a>
-    <div class="caption">
-      <h4>Know any cool books? Share them here!</h4>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/show">HOME<span class="sr-only">(current)</span></a></li>
+          <li><a href="/books/index">BOOKS</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="header">
+    <h1>Find your next favourite book.</h1>
+    <h4>BOOKS + LOVE + READ = FRESHREADS</h4>
+    <div>
+      <h4>
+        <% if current_user %>
+          Signed in as <strong><%= current_user.name %></strong>!
+          <%= link_to "Sign out", signout_path, id: "sign_out" %>
+        <% else %>
+          <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+
+        <% end %>
+      </h4>
     </div>
   </div>
-  <div id="section" class="thumbnail">
-    <a href="/books/index">
-      <%= image_tag("review.jpg", :alt => "Review") %>
-    </a>
-    <div class="caption">
-      <h4>Read a Book? Review here</h4>
+  <div id="sliderFrame">
+    <div id="slider">
+      <a href="about" target="_blank">
+        <%= image_tag("image-slider-1.jpg", :alt => "Welcome to Bookish.com") %>
+      </a>
+      <%= image_tag("image-slider-2.jpg", :alt => "The largest Digital library") %>
+      <%= image_tag("image-slider-3.jpg", :alt => "Books for all ages") %>
+      <%= image_tag("image-slider-4.jpg", :alt => "Wide-Ranging Selection") %>
+      <%= image_tag("image-slider-5.jpg", :alt => "Read Anytime. Anywhere") %>
     </div>
   </div>
-</div>
-<div class="footer" id="footer">
-  <p>Copyright &copy; www.freshreads.com</p>
-</div>
-</body>
+  <div id="part1">
+    <div id="section" class="thumbnail">
+      <a href="/show">
+        <%= image_tag("buddingauthor.jpg", :alt => "Budding Author") %>
+      </a>
+      <div class="caption">
+        <h4>Know any cool books? Share them here!</h4>
+      </div>
+    </div>
+    <div id="section" class="thumbnail">
+      <a href="/books/index">
+        <%= image_tag("review.jpg", :alt => "Review") %>
+      </a>
+      <div class="caption">
+        <h4>Read a Book? Review here</h4>
+      </div>
+    </div>
+  </div>
+  <div class="footer" id="footer">
+    <p>Copyright &copy; www.freshreads.com</p>
+  </div>
+  <h3><%= @msg %></h3>
+  </body>
 </html>

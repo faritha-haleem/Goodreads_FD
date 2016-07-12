@@ -17,7 +17,7 @@ class UserController < ApplicationController
     user = User.where(username: user_params["username"], password: user_params["password"])
     if user.present?
       redirect_to "/books/index"
-      current_user user
+      #current_user user
     else
       redirect_to "/", flash: { error: "User not found!!" }
       #render_output :user_not_found

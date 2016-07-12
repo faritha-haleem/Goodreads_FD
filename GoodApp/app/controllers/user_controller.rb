@@ -2,8 +2,6 @@ class UserController < ApplicationController
   include JsonResponse
 
   def create
-    #@user = User.find(params.require(:signup).permit(:username))
-    #if @user==nil
     @user = User.new(params.require(:signup).permit(:fname, :lname, :username, :email, :password))
     @user.save
     @signupmsg = "You have Signedup Successfully with username : #{@user.username}"

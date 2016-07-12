@@ -6,6 +6,28 @@
   <title>Reviews</title>
   <%= stylesheet_link_tag :bootstrap %>
   <%= stylesheet_link_tag :mybook %>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+
+    $( document ).ready(function() {
+      $( '#sidebar' ).append('<li><%= link_to "All Books", "/books/index" %></li>');
+      <% Genre.all.each do |genre| %>
+      var param1 = <%=@param1%>;
+      var param2 = <%=genre.id%>;
+      if(param2 == param1)
+      {
+        $( '#sidebar' ).append('<li id=genre.id class="active"><%= link_to genre.genre_name, '/books/booklist?param1='+genre.id.to_s %></li>');
+      }
+      else
+      {
+        $( '#sidebar' ).append('<li id=genre.id ><%= link_to genre.genre_name, '/books/booklist?param1='+genre.id.to_s %></li>');
+      }
+      <%end%>
+    });
+
+  </script>
+
+
 </head>
 
 <body>
@@ -26,16 +48,12 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-        <li class="active" id="all"><%= link_to 'All Books', '/books/index' %></li>
-        <% Genre.all.each do |genre| %>
-            <li id=genre.id><%= link_to genre.genre_name, '/books/booklist?param1='+genre.id.to_s %></li>
-        <%end%>
-      </ul>
+      <ul id="sidebar" class="nav nav-sidebar">
+          </ul>
     </div>
-  <div class="col-md-9 col-md-offset-2 main">
+    <div class="col-md-9 col-md-offset-2 main">
       <h1 class="page-header">Take your Pick.</h1>
-      <% @books.each do |book| %>
+      <% @books3.each do |book| %>
           <div class="col-md-3">
             <div class="thumbnail">
               <div class="caption">
@@ -49,7 +67,7 @@
           </div>
       <% end %>
     </div>
-    </div>
   </div>
-  </body>
+</div>
+</body>
 </html>

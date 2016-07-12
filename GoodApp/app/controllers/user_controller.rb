@@ -5,7 +5,6 @@ class UserController < ApplicationController
     @user = User.new(params.require(:signup).permit(:fname, :lname, :username, :email, :password))
     @user.save
     @signupmsg = "You have Signedup Successfully with username : #{@user.username}"
-    redirect_to "homepage#show"
     #else
     #	@signupmsg = "Username already taken";
     #end

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :review
   resources :user
+  #resources :books
 
-  get 'review/create'
+  #post 'books/review/create'
 
   get 'review/show'
 
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'books/show'
 
-  get 'books/review'
+  post 'books/review'
 
   get 'books/rate'
 
@@ -38,4 +39,5 @@ Rails.application.routes.draw do
   #get '/about', :to => 'authors#about'
   get '/books', :to => 'authors#books'
   get '/show', :to => 'homepage#show'
+  get '/review',:to => 'books#review'
 end

@@ -30,17 +30,19 @@
         <% @bookgenres.each do |genre| %>
             <%= genre.genre_name %></h6>
         <% end %>
+    <hr/>
+    <h3>Reviews</h3>
+    <h4>Review message</h4>
+      <% @allreviews.each do |review| %>
+        <%= review.review_msg %><br/>
+      <% end %>
         <hr/>
-        <h1>Reviews</h1>
-        <% @reviews.each do |review| %>
-            <%= review.review_msg %><br/>
-        <% end %>
-
-        <%= form_for :review, url: "books#review" do |f| %>
+        <h1>Your Review</h1>
+        <%= form_for :review, url: "/books/review" do |f| %>
             <p>
               <%= f.text_area :review_msg, :value => "Write Review" , cols:"75", rows: "10" %>
             </p>
-        <p>
+            <p>
               <%= f.submit 'Submit' %>
             </p>
         <% end %>

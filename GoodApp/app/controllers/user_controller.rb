@@ -15,11 +15,16 @@ class UserController < ApplicationController
   end
 
   def login
-    user_present = User.pluck(:username, :password).include?([params["login"]["username"], params["login"]["password"]])
-    if user_present
+    user_params = params["login"];
+    user = User.where(username: user_params["username"], password: user_params["password"])
+    if user.present?
       redirect_to "/books/index"
+      current_user user
     else
-      render_output :user_not_found
+      redirect_to "/", flash: { error: "User not found!!" }
+      #render_output :user_not_found
+      # redirect_to "/user/login"
+      # render js: "alert('Hello Rails');"
     end
   end
 

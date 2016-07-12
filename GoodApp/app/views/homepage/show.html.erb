@@ -116,8 +116,15 @@
               <span class="glyphicon glyphicon-remove-circle"></span>
           </a>
       </p>
+      <% if flash[:error] %>
+        <%= flash[:error] %>
+        <script>
+          document.getElementById('login').style.display='block';
+          document.getElementById('fade').style.display='block';
+        </script>
+      <% end %>
       <h1>Login</h1>
-      </p> <%= form_for :login, url: "user/login" do |f| %> 
+      <%= form_for :login, url: "user/login" do |f| %> 
         <p> 
           <%= f.label :Username %><br> 
           <%= f.text_field :username %> 

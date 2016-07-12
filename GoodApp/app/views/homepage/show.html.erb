@@ -32,9 +32,11 @@
 
   <a href = "javascript:void(0)" class= "btn btn-info" onload="document.registration.firstname.focus();" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Join Us Now</a>
   <div id="light" class="white_content">
-      <p align="right" ><a href="about">
-        <span class="glyphicon glyphicon-remove-circle"></span>
-      </a></p>
+      <p align="right" >
+          <a>
+              <span class="glyphicon glyphicon-remove-circle" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></span>
+          </a>
+      </p>
       <h1> Join Us</h1><br>
       <%= form_for :signup, url: { action: "create", controller: "user"}   do |f| %>
           <p>
@@ -109,11 +111,13 @@
   <br><br>
   <p><span style="font-size:2em" >Already a member? Then Click <a href = "javascript:void(0)" onclick = "document.getElementById('login').style.display='block';document.getElementById('fade1').style.display='block'">HERE</a></span></p>
   <div id="login" class="white_content2">
-      <p align="right" ><a href="about">
-        <span class="glyphicon glyphicon-remove-circle"></span>
-      </a></p>
+      <p align="right" onclick = "document.getElementById('login').style.display='none'; document.getElementById('fade1').style.display='none'">
+          <a>
+              <span class="glyphicon glyphicon-remove-circle"></span>
+          </a>
+      </p>
       <h1>Login</h1>
-      </p> <%= form_for :login, url: "user#login" do |f| %> 
+      </p> <%= form_for :login, url: "user/login" do |f| %> 
         <p> 
           <%= f.label :Username %><br> 
           <%= f.text_field :username %> 

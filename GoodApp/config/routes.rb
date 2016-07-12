@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   get 'user/create'
 
-  get 'user/login'
+  post 'user/login'
 
   get 'user/show'
 

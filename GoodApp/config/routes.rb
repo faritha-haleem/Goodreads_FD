@@ -1,41 +1,30 @@
 Rails.application.routes.draw do
-  resources :review
   resources :user
 
-  get 'review/create'
-
-  get 'review/show'
-
-  get 'genres/show'
+  get 'genres/index' => 'genres#index'
 
   get 'publisher/show'
 
   get 'publisher/home'
 
-  get 'authors/show'
+  get 'author/show'
 
   get 'author/home'
 
-  get 'books/index'
+  get 'books/index' => 'books#index'
 
-  get 'books/show'
+  get 'books/:id' => 'books#show', as: :book
 
-  get 'books/review'
+  get 'auth/:provider/callback', to: 'sessions#create'
+  
+  get 'auth/failure', to: redirect('/')
+  
+  get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  get 'books/rate'
+  resources :sessions, only: [:create, :destroy]
 
   root 'homepage#show'
 
-  get 'user/create'
-
-  get 'user/login'
-
-  get 'user/show'
-
-  get 'genre/show'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  #get '/about', :to => 'authors#about'
-  get '/books', :to => 'authors#books'
-  get '/show', :to => 'homepage#show'
+  get '/show' => 'homepage#show'
+  
 end

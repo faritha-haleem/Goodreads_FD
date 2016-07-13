@@ -37,22 +37,23 @@
 </nav>
 <div class="container-fluid">
   <div class="col-md-12 main">
-    <h1 class="page-header"><%= @books.title%></h1>
-    <h4>Written by&nbsp;<%= @books.author_name %></h4>
+    <h1 class="page-header"><%= @books1.title%></h1>
+    <h4>Written by&nbsp;<%= @books1.author_name %></h4>
         <% @bookgenres.each do |genre| %>
             <%= genre.genre_name %></h6>
         <% end %>
-        <hr/>
+    <hr/>
         <h1>Reviews</h1>
         <% @reviews.each do |review| %>
             <%= review.review_msg %><br/>
         <% end %>
 
-        <%= form_for :review, url: books_review do |f| %>
+        <h1>Your Review</h1>
+        <%= form_for :review, url: "/books/review" do |f| %>
             <p>
               <%= f.text_area :review_msg, :value => "Write Review" , cols:"75", rows: "10" %>
             </p>
-        <p>
+            <p>
               <%= f.submit 'Submit' %>
             </p>
         <% end %>

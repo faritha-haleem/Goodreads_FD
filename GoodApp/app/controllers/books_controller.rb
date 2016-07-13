@@ -17,11 +17,4 @@ class BooksController < ApplicationController
     @reviews = Review.where(book_id: @books.id)
     @ratings = Rate.where(book_id: @books.id)
   end
-  def review
-    @review = Review.new(params.require(:review).permit(:review_msg))
-    @review.save
-  end
-
-  def rate
-  end
 end

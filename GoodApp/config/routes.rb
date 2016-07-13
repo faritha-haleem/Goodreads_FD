@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   get 'author/home'
 
-  get 'books/index' => 'books#index'
+  get 'books/index' 
 
-  get 'books/:id' => 'books#show', as: :book
+  get 'books/show' 
 
   get 'auth/:provider/callback', to: 'sessions#create'
   
@@ -26,5 +26,7 @@ Rails.application.routes.draw do
   root 'homepage#show'
 
   get '/show' => 'homepage#show'
+
+  post '/books/review/:id' => 'review#create', as: :review
   
 end

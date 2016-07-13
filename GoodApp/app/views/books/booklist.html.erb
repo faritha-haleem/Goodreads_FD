@@ -40,6 +40,19 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/show">HOME</a></li>
         <li class="active"><a href="/books/index">BOOKS<span class="sr-only">(current)</span></a></li>
+        <li></li>
+        <li>
+          <div>
+           <h4>
+            <% if current_user %>
+              <strong><%= current_user.name %></strong>!
+              <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            <% else %>
+              <%= link_to "Google Sign In", "/auth/google_oauth2", id: "sign_in" %>
+            <% end %>
+           </h4>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

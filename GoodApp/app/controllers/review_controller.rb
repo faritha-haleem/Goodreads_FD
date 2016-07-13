@@ -3,12 +3,17 @@ class ReviewController < ApplicationController
 
   end
   def create
-    @review = Review.new(params.require(:create_review).permit(:userid, :bookid, :review))
+    @review = Review.new(review_params)
     @review.save
-    redirect_back fallback_location: "http://localhost:3000/show"
+    redirect_to :back
+    # render_output :params
   end
 
   def show
     @review=Review.all
+  end
+
+  def review_params
+  	params.require(:review).permit(:review_msg).merge(params.permit(:user_id,:book_id))
   end
 end

@@ -41,6 +41,6 @@ Rails.application.routes.draw do
 
   get '/show' => 'homepage#show'
 
-  post '/books/review/:id' => 'review#create', as: :review
+  post '/books/review' => 'review#create'
   
 end

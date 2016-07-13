@@ -19,6 +19,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/show">HOME</a></li>
         <li><a href="/books/index">BOOKS</a></li>
+        <li></li>
         <li>
           <div>
            <h4>
@@ -50,6 +51,8 @@
 
         <h1>Your Review</h1>
         <%= form_for :review, url: "/books/review" do |f| %>
+            <%= hidden_field_tag(:book_id, @books1.id) %>
+            <%= hidden_field_tag(:user_id, current_user.id) %>
             <p>
               <%= f.text_area :review_msg, :value => "Write Review" , cols:"75", rows: "10" %>
             </p>

@@ -43,10 +43,14 @@
         <li></li>
         <li>
           <div>
-           <h4>
+           <h4 style="color:white;">
             <% if current_user %>
-              <strong><%= current_user.name %></strong>!
+              <%= image_tag current_user.photo, height: "20px" %>
+              <%= current_user.name %>
+              </li>
+              <li>
               <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              </li>
             <% else %>
               <%= link_to "Google Sign In", "/auth/google_oauth2", id: "sign_in" %>
             <% end %>

@@ -25,6 +25,7 @@ class BooksController < ApplicationController
     @ratings = Rate.where(book_id: @books1.id)
     @allreviews=Review.all
   end
+
   def review
    # byebug
     @review = Review.new(params.require(:review).permit(:review_msg))
@@ -39,5 +40,4 @@ class BooksController < ApplicationController
     @param1 = params[:param1]
     @books3 = @books2.where("genre_id = ?",@param1)
   end
-
 end

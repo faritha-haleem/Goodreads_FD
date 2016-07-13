@@ -18,9 +18,9 @@ Rails.application.routes.draw do
 
   get 'author/home'
 
-  get 'books/index' => 'books#index'
+  get 'books/index' 
 
-  get 'books/:id' => 'books#show', as: :book
+  get 'books/show' 
 
 
   post 'books/review'
@@ -53,5 +53,7 @@ Rails.application.routes.draw do
   get '/review',:to => 'books#review'
 
   get '/show' => 'homepage#show'
+
+  post '/books/review/:id' => 'review#create', as: :review
 
 end

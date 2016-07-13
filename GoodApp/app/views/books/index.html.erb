@@ -19,6 +19,18 @@
         <li><%= @current_user %></li>
         <li><a href="/show">HOME</a></li>
         <li class="active"><a href="/books/index">BOOKS<span class="sr-only">(current)</span></a></li>
+        <li>
+          <div>
+           <h4>
+            <% if current_user %>
+              <strong><%= current_user.name %></strong>!
+              <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            <% else %>
+              <%= link_to "Google Sign In", "/auth/google_oauth2", id: "sign_in" %>
+            <% end %>
+           </h4>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -44,7 +56,7 @@
                 <h5>Written by <%= book.author_name %></h5><br>
                 <h7>Published by <%= book.pub_name %></h7><br>
                 <h7>ISBN: <%= book.isbn %></h7><br>
-                <p><%= link_to 'Review this Book', books_show_path(book)%></p>
+                <p><%= link_to 'See More', books_show_path(book)%></p>
               </div>
             </div>
           </div>

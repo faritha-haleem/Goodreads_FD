@@ -22,6 +22,18 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/show">HOME<span class="sr-only">(current)</span></a></li>
           <li><a href="/books/index">BOOKS</a></li>
+          <li>
+            <div>
+             <h4>
+              <% if current_user %>
+                <strong><%= current_user.name %></strong>!
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              <% else %>
+                <%= link_to "Google Sign In", "/auth/google_oauth2", id: "sign_in" %>
+              <% end %>
+             </h4>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -29,17 +41,6 @@
   <div id="header">
     <h1>Find your next favourite book.</h1>
     <h4>BOOKS + LOVE + READ = FRESHREADS</h4>
-    <div>
-      <h4>
-        <% if current_user %>
-          Signed in as <strong><%= current_user.name %></strong>!
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
-        <% else %>
-          <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-
-        <% end %>
-      </h4>
-    </div>
   </div>
   <div id="sliderFrame">
     <div id="slider">

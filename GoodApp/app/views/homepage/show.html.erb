@@ -24,15 +24,19 @@
           <li><a href="/books/index">BOOKS</a></li>
           <li>
             <div>
-             <h4>
-              <% if current_user %>
-                <strong><%= current_user.name %></strong>!
-                <%= link_to "Sign out", signout_path, id: "sign_out" %>
-              <% else %>
-                <%= link_to "Google Sign In", "/auth/google_oauth2", id: "sign_in" %>
-              <% end %>
-             </h4>
-            </div>
+           <h4 style="color:white;">
+            <% if current_user %>
+              <%= image_tag current_user.photo, height: "20px" %>
+              <%= current_user.name %>
+              </li>
+              <li>
+              <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              </li>
+            <% else %>
+              <%= link_to "Google Sign In", "/auth/google_oauth2", id: "sign_in" %>
+            <% end %>
+           </h4>
+          </div>
           </li>
         </ul>
       </div>
@@ -45,12 +49,12 @@
   <div id="sliderFrame">
     <div id="slider">
       <a href="about" target="_blank">
-        <%= image_tag("image-slider-1.jpg", :alt => "Welcome to Bookish.com") %>
+        <%= image_tag("image-slider-1.jpg", :alt => "Welcome to FRESHREADS") %>
       </a>
-      <%= image_tag("image-slider-2.jpg", :alt => "The largest Digital library") %>
+      <%= image_tag("image-slider-2.jpg", :alt => "The freshdesk library") %>
       <%= image_tag("image-slider-3.jpg", :alt => "Books for all ages") %>
       <%= image_tag("image-slider-4.jpg", :alt => "Wide-Ranging Selection") %>
-      <%= image_tag("image-slider-5.jpg", :alt => "Read Anytime. Anywhere") %>
+      <%= image_tag("image-slider-5.jpg", :alt => "Read Anytime, Anywhere in the Office") %>
     </div>
   </div>
   <div id="part1">

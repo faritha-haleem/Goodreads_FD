@@ -22,10 +22,14 @@
         <li></li>
         <li>
           <div>
-           <h4>
+           <h4 style="color:white;">
             <% if current_user %>
-              <strong><%= current_user.name %></strong>!
+              <%= image_tag current_user.photo, height: "20px" %>
+              <%= current_user.name %>
+              </li>
+              <li>
               <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              </li>
             <% else %>
               <%= link_to "Google Sign In", "/auth/google_oauth2", id: "sign_in" %>
             <% end %>
@@ -46,15 +50,20 @@
     <hr/>
     <h1>Reviews</h1>
         <% @reviews.each do |review| %>
+          <div style="border-left: 4px solid blue;background-color:lightblue;width:50%;">
+            <%= image_tag review.photo, height: "20px"%>
+            <%= review.name %><br/><br/>
             <%= review.review_msg %><br/>
+          </div>
+          <br/>
         <% end %>
         <% if current_user%>
-          <h1>Your Review</h1>
+          <h3>Your Review</h3>
           <%= form_for :review, url: "/books/review" do |f| %>
               <%= hidden_field_tag(:book_id, @books1.id) %>
               <%= hidden_field_tag(:user_id, current_user.id) %>
               <p>
-                <%= f.text_area :review_msg, :value => "Write Review" , cols:"75", rows: "10" %>
+                <%= f.text_area :review_msg, :placeholder => "Write Review" , cols:"75", rows: "10" %>
               </p>
               <p>
                 <%= f.submit 'Submit' %>

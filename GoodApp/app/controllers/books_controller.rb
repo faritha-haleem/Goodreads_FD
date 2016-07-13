@@ -21,9 +21,10 @@ class BooksController < ApplicationController
   def show
     @books1 = @books.find(params[:format])
     @bookgenres = Genre.where(id: BookGenre.select(:genre_id).where("book_id" => @books1.id))
-    @reviews = Review.where(book_id: @books1.id)
+    # @reviews = Review.where(book_id: @books1.id)
+    @reviews = Review.joins('JOIN users ON users.id = reviews.user_id').select("users.name as name, users.photo as photo, reviews.review_msg as review_msg").where('reviews.book_id = ?', @books1.id)
     @ratings = Rate.where(book_id: @books1.id)
-    @allreviews=Review.all
+    # @allreviews=Review.all
   end
 
   def fiction

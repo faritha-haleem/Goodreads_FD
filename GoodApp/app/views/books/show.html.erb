@@ -19,6 +19,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/show">HOME</a></li>
         <li><a href="/books/index">BOOKS</a></li>
+        <li></li>
         <li>
           <div>
            <h4>
@@ -43,22 +44,24 @@
             <%= genre.genre_name %></h6>
         <% end %>
     <hr/>
-    <h3>Reviews</h3>
-    <h4>Review message</h4>
-      <% @allreviews.each do |review| %>
-        <%= review.review_msg %><br/>
-      <% end %>
-        <hr/>
-
-        <%= form_for :review, url: books_review do |f| %>
-            <p>
-              <%= f.text_area :review_msg, :value => "Write Review" , cols:"75", rows: "10" %>
-            </p>
-            <p>
-              <%= f.submit 'Submit' %>
-            </p>
+    <h1>Reviews</h1>
+        <% @reviews.each do |review| %>
+            <%= review.review_msg %><br/>
         <% end %>
-        <hr/>
+        <% if current_user%>
+          <h1>Your Review</h1>
+          <%= form_for :review, url: "/books/review" do |f| %>
+              <%= hidden_field_tag(:book_id, @books1.id) %>
+              <%= hidden_field_tag(:user_id, current_user.id) %>
+              <p>
+                <%= f.text_area :review_msg, :value => "Write Review" , cols:"75", rows: "10" %>
+              </p>
+              <p>
+                <%= f.submit 'Submit' %>
+              </p>
+          <% end %>
+          <hr/>
+        <%end%>
         <h1>Rating</h1>
         <% @ratings.each do |rating| %>
             <%= rating.rate %></br>

@@ -26,16 +26,6 @@ class BooksController < ApplicationController
     @allreviews=Review.all
   end
 
-  def review
-   # byebug
-    @review = Review.new(params.require(:review).permit(:review_msg))
-    @review.save
-    redirect_to  "/books/index"
-  end
-
-  def rate
-  end
-
   def fiction
     @param1 = params[:param1]
     @books3 = @books2.where("genre_id = ?",@param1)
